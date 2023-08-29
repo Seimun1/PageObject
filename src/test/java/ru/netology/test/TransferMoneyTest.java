@@ -45,21 +45,21 @@ public class TransferMoneyTest {
         Assertions.assertEquals(expectedToCardBalance, actualToCardBalance);
     }
 
-//    @Test
-//    @DisplayName("Should show errorMessage when amount for transfer more then balance")
-//    void shouldShowErrorMessage() {
-//        int cardIndexFrom = 0;
-//        int cardIndexTo = 1;
-//        var fromCardBalance = dashboardPage.getCardBalance(cardIndexFrom);
-//        var toCardBalance = dashboardPage.getCardBalance(cardIndexTo);
-//        var amount = generateInValidAmount(fromCardBalance);
-//        var transferPage = dashboardPage.reliff(cardIndexTo);
-//        transferPage.validTransfer(Integer.toString(amount), cardIndexFrom);
-//        transferPage.findErrorMessage("Ошибка! Недостаточно средств для перевода");
-//        var actualFromCardBalance = dashboardPage.getCardBalance(cardIndexFrom);
-//        var actualToCardBalance = dashboardPage.getCardBalance(cardIndexTo);
-//        Assertions.assertEquals(fromCardBalance, actualFromCardBalance);
-//        Assertions.assertEquals(toCardBalance, actualToCardBalance);
-//    }
+    @Test
+    @DisplayName("Should show errorMessage when amount for transfer more then balance")
+    void shouldShowErrorMessage() {
+        int cardIndexFrom = 0;
+        int cardIndexTo = 1;
+        var fromCardBalance = dashboardPage.getCardBalance(cardIndexFrom);
+        var toCardBalance = dashboardPage.getCardBalance(cardIndexTo);
+        var amount = generateInValidAmount(fromCardBalance);
+        var transferPage = dashboardPage.reliff(cardIndexTo);
+        transferPage.validTransfer(Integer.toString(amount), cardIndexFrom);
+        transferPage.findErrorMessage("Ошибка! Недостаточно средств для перевода");
+        var actualFromCardBalance = dashboardPage.getCardBalance(cardIndexFrom);
+        var actualToCardBalance = dashboardPage.getCardBalance(cardIndexTo);
+        Assertions.assertEquals(fromCardBalance, actualFromCardBalance);
+        Assertions.assertEquals(toCardBalance, actualToCardBalance);
+    }
 
 }
