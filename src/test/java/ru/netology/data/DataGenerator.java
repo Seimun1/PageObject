@@ -45,10 +45,10 @@ public class DataGenerator {
     }
 
     public static int generateValidAmount(int balance) {
-        return new Random().nextInt(balance) + 1;
+        return new Random().nextInt(Math.abs(balance)) + 1;
     }
 
     public static int generateInValidAmount(int balance) {
-        return balance + new Random().nextInt(10000) + 1;
+        return Math.abs(balance) + new Random().nextInt(10000) + 1;
     }
 }
