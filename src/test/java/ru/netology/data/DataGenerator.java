@@ -4,10 +4,6 @@ import lombok.Value;
 
 import java.util.Random;
 
-import static com.codeborne.selenide.Selenide.$$;
-import static java.lang.Integer.parseInt;
-import static org.apache.commons.lang3.RandomUtils.nextInt;
-
 public class DataGenerator {
 
     private DataGenerator() {}
